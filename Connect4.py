@@ -1,3 +1,6 @@
+#Jaiden Bailey
+
+
 import random
 
 #Function to print the board
@@ -5,7 +8,7 @@ def print_board(board):
     for row in board:
         print(" | ".join(row))
         print("-" * 21)
-#function to check if player has 4 in a row whether its in vertical, horizontal, or diagonal.
+#Function to check if player has 4 in a row whether its in vertical, horizontal, or diagonal.
 def check_win(board, player):
     for row in range(6):
         for col in range(4):
@@ -49,7 +52,7 @@ def play_connect_4():
     print_board(board)
 
     while True:
-        # Player 1 move
+        # Moves for player 1 move
         col = int(input(f"Player 1 ({player1}), enter column (0-6): "))
         while not is_valid_move(board, col):
             col = int(input("Invalid move. Enter column (0-6): "))
@@ -59,12 +62,12 @@ def play_connect_4():
             print("Player 1 wins!")
             break
 
-        # Check for a tie
+        # Checking for a tie
         if all(board[0][i] != " " for i in range(7)):
             print("It's a tie!")
             break
 
-        # Player 2 move
+        # Moves for player 2 
         choice = input("Enter '1' to play against another player, or '2' to play against the computer: ")
         if choice == "1":
             col = int(input(f"Player 2 ({player2}), enter column (0-6): "))
